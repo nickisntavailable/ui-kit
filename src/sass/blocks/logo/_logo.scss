@@ -1,0 +1,26 @@
+.logo {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 30px;
+    top: 30px;
+    border-radius: 50%;
+    border: 3px solid $dark-25;
+
+    &::before {
+        content: url('../img/left.svg');
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 8px;
+        top: 16px;
+    }
+    &::after {
+        content: url('../img/right.svg');
+        position: absolute;
+        width: 11px;
+        height: 7px;
+        left: 22px;
+        top: 9px;
+    }
+}

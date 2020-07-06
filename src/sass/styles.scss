@@ -1,0 +1,34 @@
+@import 'primitives/primitives';
+
+@import 'blocks/container/container';
+@import 'blocks/logo/logo';
+@import 'blocks/colors/colors';
+@import 'blocks/types/types';
+@import 'blocks/text-field/text-field';
+@import 'blocks/dropdown/dropdown';
+@import 'blocks/button/button';
+@import 'blocks/increment-input/increment-input';
+@import 'blocks/checkbox/checkbox';
+@import 'blocks/radio/radio';
+@import 'blocks/toggle/toggle';
+@import 'blocks/rating/rating';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    position: relative;
+    color: $dark-100;
+}
+
+h1 {font-size: 24px; line-height: 30px;}
+h2 {font-size: 19px; line-height: 23px;}
+h3 {font-size: 12px; line-height: 15px; text-transform: uppercase;}
+body {font-size: 14px; line-height: 24px; color: $dark-75;}
+
+

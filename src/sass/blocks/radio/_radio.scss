@@ -1,0 +1,77 @@
+
+$spacing-unit: 20px;
+$half-spacing-unit: $spacing-unit / 2;
+$quarter-spacing-unit: $spacing-unit / 4;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.radio {
+    &__title {
+        margin-bottom: 16px;
+    }
+    &__options {
+        
+        color: $dark-25;
+        
+
+        input {
+            display: none;
+        }
+        // .options > label
+        > label {
+            display: inline-block;
+            position: relative;
+            margin-right: $spacing-unit;
+            padding-left: $spacing-unit + $half-spacing-unit;
+            cursor: pointer;
+
+            // .options > label:before
+            // this creates the outer circle for faux radio button
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                left: 0;
+                top: 50%;
+                margin-top: -10px;
+                border: 1px solid $dark-25;
+                border-radius: 50%;
+            }
+
+            // .options > label:after
+            // this creates the inner circle for active faux radio button
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 50%;
+                left: 10px;
+                margin-top: 0;
+                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);;
+                border-radius: 6px;
+                transition: .2s ease-in-out;
+            }
+        }
+
+        // .options :checked + label:after
+        :checked + label {
+            color: $dark-50;   
+
+            &:after {
+            height: 12px;
+            width: 12px;
+            margin-top: -6px;
+            left:4px;
+            }
+            &:before {
+                border-color: $dark-50;
+            }
+        }
+    }
+}

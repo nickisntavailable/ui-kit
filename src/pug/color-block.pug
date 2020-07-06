@@ -1,0 +1,60 @@
+mixin colors_block(color, title, title_color)
+    .colors
+        .colors__img(class=color)
+        .colors__txt
+            p=title
+            if (color.name == "purple" || color.name == "green")
+                br
+            p=title_color
+
+mixin type_block(name, title)
+    .types
+        .types__name(class=name)=name
+        .types__title(class=name)=title
+
+mixin text-field(name, placeholder, type)
+    .text-field
+                label(for=name)= name
+                input(type=type class ="text-field__text" name=name placeholder=placeholder)
+
+mixin masked-text-field(name, placeholder)
+    .text-field
+                label(for=name)= name
+                input(type=type  class="text-field__text" id="masked" name=name placeholder=placeholder)
+
+mixin subscription-text-field(name, placeholder)
+    .text-field
+            label(for=name)= "subscription text field"
+            input(type="email" class ="text-field__text" name=name placeholder=placeholder)
+            input(type="submit" class="text-field__submit material-icons" value="arrow_forward")
+
+mixin increment-input(name)
+    .increment-input
+        label(for="increment-input__input")=name
+        .increment-input__container
+            .increment-input__minus.disabled="-"
+            input(type="number" min="0" max="100" step="1" value="0" class="increment-input__input")
+            .increment-input__plus="+"
+
+
+mixin dropdown(people) 
+    .dropdown
+        .dropdown__title
+            label(for="dropdown")= "dropdown"
+            if(people)
+                input(type="text" class ="dropdown__title__input" name="dropdown" placeholder="Сколько гостей")
+            else
+                input(type="text" class ="dropdown__title__input" name="dropdown" placeholder="0 спальни; 0 кровати...")
+            input(type="submit" class="dropdown__title__submit material-icons" value="keyboard_arrow_down")
+        .dropdown__items
+            if(people)
+                +increment-input("Взрослые")
+                +increment-input("Дети")
+                +increment-input("Младенцы")
+                .increment-input__buttons-block
+                    .button.clean="Очистить"
+                    .button="Применить"
+            else
+                +increment-input("Спальни")
+                +increment-input("Кровати")
+                +increment-input("Ванные комнаты")

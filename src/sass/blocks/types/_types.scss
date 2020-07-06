@@ -1,0 +1,32 @@
+@mixin style-list {
+    &.h2 {font-size: 19px; line-height: 23px;}
+    &.h3 {font-size: 12px; line-height: 15px;}
+    &.body {font-size: 14px; line-height: 24px;}
+}
+
+
+.types {
+    display: flex;
+    justify-content: start;
+    margin: 0 0 50px 0;
+    &__name {
+        display: block;
+        width: 30px;
+        text-align: right;
+        font-size: 24px;
+        line-height: 29px;
+        color: $dark-25;
+        text-transform: capitalize;
+        @include style-list;
+
+    }
+    &__title {
+        max-width: 340px;
+        font-size: 24px;
+        line-height: 30px;
+        padding-left: 30px;
+        color: $dark-100;
+        @include style-list;
+        &.body {color: $dark-75;}
+    }
+}

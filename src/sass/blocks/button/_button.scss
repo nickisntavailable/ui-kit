@@ -1,0 +1,105 @@
+.button {
+    color: #BC9CFF; 
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    width: 100px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    border: none;
+
+    &__title {
+        margin-bottom: 16px;
+    }
+
+    &.filled {
+        width: 320px;
+        height: 44px;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);;
+        color: #fff;
+        border-radius: 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .filled__submit {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            background: #fff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            border: none;
+            width: 44px;
+            height: 44px;
+            right: 0;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+
+    &.border {
+        width: 99px;
+        height: 44px;
+        border-radius: 22px;
+        color: $purple;
+        border: 2px solid $purple;
+        &:hover,
+        &.active {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);;
+            color: #fff;
+        }
+
+        &.disabled {
+            opacity: 0.5;
+        }
+    }
+
+    &.dark50 {
+        color: $dark-50;
+    }
+
+
+
+    &.clean {
+        color: $dark-50;
+        visibility: hidden;
+    }
+
+
+    
+}
+
+
+.like {
+    width: 40px;
+    height: 20px;
+    padding: 0 6px;
+    background: #FFFFFF;
+    border: 1px solid $dark-25;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: $dark-25;
+    outline: none;
+
+    &__label {
+        margin-bottom: 16px;
+    }
+    &.active {
+        border-color: $purple;
+        color: $purple;
+    }
+    
+    &__text {
+        margin-left: 6px;
+    }
+}

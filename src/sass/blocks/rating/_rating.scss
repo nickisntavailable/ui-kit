@@ -1,0 +1,59 @@
+
+
+.rating {
+    // margin: 50px auto;
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    &__title {
+        padding-bottom: 16px;
+    }
+
+    label {
+        height: 40px;
+        width: 20%;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        @for $i from 5 through 1 {
+            &:nth-of-type(#{$i}):after {
+                $animation-delay: $i * .05s;
+                animation-delay: $animation-delay;
+            }
+        }
+        &:after {
+            transition: all 0.4s ease-out;
+            content: 'star_border';
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 24px;
+        }
+        &:hover:after {
+            content: 'star';
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    input {
+        display: none;
+        &:checked {
+            + label:after,
+            ~ label:after {
+                content: 'star';
+                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}
