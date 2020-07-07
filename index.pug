@@ -6,6 +6,14 @@ mixin checkbox-item(text)
         input(type="submit" class="checkbox__item__input" id="checkbox__item__input" value="") 
         label(for="checkbox__item" class="checkbox__item__label")=text
 
+mixin checkbox-item-wide(header, paragraph)
+    .checkbox__item.wide
+        input(type="submit" class="checkbox__item__input" id="checkbox__item__input" value="") 
+        label(for="checkbox__item" class="checkbox__item__label")
+            h3=header
+            p=paragraph
+
+
 mixin radio()
     .radio
         .radio__title
@@ -59,6 +67,26 @@ mixin button-submit()
             p="Перейти к оплате"
             label(type="submit" class="filled__submit material-icons")="arrow_forward"
 
+mixin expandable-checkbox()
+    .expandable-checkbox
+        .expandable-checkbox__title
+            h3.title="Range Slider"
+            span(class=".expandable-checkbox__btn material-icons")="keyboard_arrow_up"
+        .expandable-checkbox__items.disabled
+            +checkbox-item("Завтрак")
+            +checkbox-item("Письменный стол")
+            +checkbox-item("Стул для кормления")
+            +checkbox-item("Кроватка")
+            +checkbox-item("Телевизор")
+            +checkbox-item("Шампунь")
+
+mixin bullet-list(items)
+    .bullet-list
+        h3.title="bullet list"
+        ul
+            each item in items
+                li= item
+
 -var colors = [{name: "dark", opacity: "100"},{name: "dark", opacity: "75"},{name: "dark", opacity: "50"},{name: "dark", opacity: "25"},{name: "purple", opacity: ""},{name: "green", opacity: ""},]
 
 
@@ -111,9 +139,24 @@ html(lang="en")
                 button.button.dark50="Click Me"
                 button.button.border="Click Me"
                 button.button.border.disabled="Click Me"
+
                 +button-submit()
-            .container.half
                 .paginator
+                +expandable-checkbox()
+
+                h3.title="rich checkbox buttons"
+                +checkbox-item-wide("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+                +checkbox-item-wide("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
+                +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00,а выезд до 12:00"])
+            .container.half
+                
+                
+                
+        
+                
+
+
+                
                 
 
                 

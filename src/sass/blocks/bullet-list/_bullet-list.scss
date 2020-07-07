@@ -1,0 +1,22 @@
+.bullet-list {
+    ul {
+        list-style: none;
+        li {
+            max-width: 270px;
+            position: relative;
+            padding-left: 20px;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: $dark-25;
+                margin-right: 10px;
+                left: 0;
+                top: 1px;
+                transform: translateY(50%);
+            }
+        }
+    }
+}

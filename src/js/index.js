@@ -31,7 +31,15 @@ $('.datepicker-here').datepicker({
 
 $('.checkbox__item__input').on('click', (e) => {
     // $(e.target).val() == "done" ? $(e.target).val("") : $(e.target).val("done");
+    // console.log(e.target.className);
     $(e.target).toggleClass('checked');
+});
+
+$('.expandable-checkbox__title').on('click', function() {
+    // $(e.target).val() == "done" ? $(e.target).val("") : $(e.target).val("done");
+    
+    $(this).children('span').text() == "keyboard_arrow_down" ? $(this).children('span').text("keyboard_arrow_up") : $(this).children('span').text("keyboard_arrow_down");
+    $(this).parent().find(".expandable-checkbox__items").toggleClass('disabled'); 
 });
 
 

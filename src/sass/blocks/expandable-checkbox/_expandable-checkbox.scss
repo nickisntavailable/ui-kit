@@ -1,0 +1,15 @@
+.expandable-checkbox {
+
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        width:266px;
+        
+    }
+    &__items {
+        &.disabled {
+            display: none;
+        }
+    }  
+    
+}

@@ -127,6 +127,7 @@ span.ellipse.clickable {
 	border-radius: 50%;
 	text-decoration: none;
 	background: #fff;
+	
 }
 
 .light-theme a:hover, .light-theme li:not(.disabled):not(.active) span:hover {
@@ -143,6 +144,7 @@ span.ellipse.clickable {
 	/* border-color: #444; */
 	/* box-shadow: 0 1px 0 rgba(255,255,255,1), 0 0 2px rgba(0, 0, 0, 0.3) inset; */
 	cursor: default;
+
 }
 
 .light-theme .ellipse {
@@ -159,6 +161,15 @@ span.ellipse.clickable {
 	font-family: 'Material Icons';
 	color: #fff;
 }
+
+
+.light-theme li.disabled span.current.next {
+	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+	font-family: 'Material Icons';
+	color: #fff;
+	opacity: 0.2;
+}
+
 
 /*------------------------------------*\
 	Dark Theme Styles

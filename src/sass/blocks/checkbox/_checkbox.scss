@@ -5,15 +5,15 @@
         margin-bottom: 16px;
     }
 
-    .checked {
-        background: url('../img/check.svg') center center no-repeat;
-        border-color: $purple;
-    }
+    
 
     &__item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         margin-bottom: 10px;
+
+        
+
         &__input {
             width: 20px;
             height: 20px;
@@ -24,6 +24,10 @@
             &:hover { 
                 border-color: $purple;
             }
+            &.checked {
+                background: url('../img/check.svg') center center no-repeat;
+                border-color: $purple;
+            }
         }
         &__label {
             position: relative;
@@ -31,7 +35,24 @@
             max-width: 200px;
             font-size: 14px;
             line-height: 18px;
-            color: $dark-50;            
+            color: $dark-50; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: end;
+            align-items: flex-start;
+            h3 {
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 18px;
+                text-transform: initial;
+            }
+            p {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 14px;
+                color: $dark-50;
+                max-width: 200px;
+            }
         }
     }
 }
