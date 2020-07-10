@@ -1,3 +1,21 @@
+mixin date-dropdown(name)
+    .dropdown
+        h3=name
+        .dropdown__title.short
+            input(type="text" class ="datepicker-left dropdown__title__input upper" name="dropdown" placeholder="ДД.ММ.ГГГГ")
+            input(type="submit" class="dropdown__title__submit material-icons" value="keyboard_arrow_down")
+
+
+mixin date-pick()
+    .dropdown
+        h3.title="date pick"
+        .dropdown__title
+            //- label(for="dropdown")= "date pick"
+            input(type="text" class ="datepicker-here dropdown__title__input" name="dropdown" placeholder="19 авг - 23 авг")
+            input(type="submit" class="dropdown__title__submit material-icons" value="keyboard_arrow_down")
+
+
+
 mixin colors_block(color, title, title_color)
     .colors
         .colors__img(class=color)
@@ -17,10 +35,10 @@ mixin text-field(name, placeholder, type)
                 label(for=name)= name
                 input(type=type class ="text-field__text" name=name placeholder=placeholder)
 
-mixin masked-text-field(name, placeholder)
+mixin masked-text-field(placeholder, id)
     .text-field
-                label(for=name)= name
-                input(type=type  class="text-field__text" id="masked" name=name placeholder=placeholder)
+                //- label(for=name)= name
+                input(type="text"  class="text-field__text" id=id name=name placeholder=placeholder)
 
 mixin subscription-text-field(name, placeholder)
     .text-field
@@ -37,10 +55,10 @@ mixin increment-input(name)
             .increment-input__plus="+"
 
 
-mixin dropdown(people) 
+mixin dropdown(people, title) 
     .dropdown
         .dropdown__title
-            label(for="dropdown")= "dropdown"
+            label(for="dropdown")=title
             if(people)
                 input(type="text" class ="dropdown__title__input" name="dropdown" placeholder="Сколько гостей")
             else
@@ -58,3 +76,4 @@ mixin dropdown(people)
                 +increment-input("Спальни")
                 +increment-input("Кровати")
                 +increment-input("Ванные комнаты")
+

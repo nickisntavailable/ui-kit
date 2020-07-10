@@ -1,0 +1,15 @@
+.container.half
+    each color in colors
+        if(color.name == "dark" && opacity != "")
+            -var cname = color.name + "-" + color.opacity
+            -var ctext = `Dark Shade ${color.opacity}%`
+            +colors_block(cname, ctext, "#1F2041")
+        else if (color.name == "purple")
+            +colors_block("purple", "Purple", "#BC9CFF")
+        else if (color.name == "green")
+            +colors_block("green", "Green", "#6FCF97")
+.container.half
+    +type_block("h1", "This one is the sub-section or widget title")
+    +type_block("h2", "Next one is the item title inside widgets")
+    +type_block("h3", "This is a label or CTA text")
+    +type_block("body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")

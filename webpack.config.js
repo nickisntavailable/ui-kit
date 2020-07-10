@@ -33,7 +33,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: 'img', to: '../dist/img' }
+                { from: 'img', to: '../dist/img' },
+                { from: 'fonts', to: '../dist/fonts' }
               ],
         }), 
     ],
@@ -58,6 +59,11 @@ module.exports = {
                     'css-loader',
                     'sass-loader'
                 ]
+            },
+            {
+                // Fonts
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: ["file-loader"]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/,///\.png$/,

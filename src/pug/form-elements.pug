@@ -1,0 +1,45 @@
+.container.half
+    +text-field("text-field", "Email", "text")
+    +masked-text-field("ДД.ММ.ГГГГ", "masked")
+    +subscription-text-field("subscription text field", "Email")
+    +dropdown(false)
+    +dropdown(true)
+    
+    .checkbox
+        .checkbox__label
+            h3= "Checkbox Buttons"
+        +checkbox-item("Можно курить")
+        +checkbox-item("Можно с питомцами")
+        +checkbox-item("Можно пригласить гостей (до 10 человек)")
+    //- +radio()
+    +toggle(true)
+    +toggle(false)
+    +like()
+    +rating()
+
+    h3.button__title="Buttons"
+    button.button="Click Me"
+    button.button.dark50="Click Me"
+    button.button.border="Click Me"
+    button.button.border.disabled="Click Me"
+
+.container.half
+    +date-pick()
+
+
+    .date-dropdown
+        +date-dropdown("date dropdown")
+        +date-dropdown("date dropdown")
+
+    +cons("insert_emoticon")
+    +cons("location_city")
+
+    +button-submit()
+    .paginator
+    +expandable-checkbox()
+
+    h3.title="rich checkbox buttons"
+    +checkbox-item-wide("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+    +checkbox-item-wide("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
+    +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00,а выезд до 12:00"])
+    

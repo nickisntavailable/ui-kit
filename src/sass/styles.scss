@@ -1,4 +1,6 @@
 @import 'primitives/primitives';
+@import 'primitives/fonts/fonts';
+
 
 @import 'blocks/container/container';
 @import 'blocks/logo/logo';
@@ -14,6 +16,19 @@
 @import 'blocks/rating/rating';
 @import 'blocks/expandable-checkbox/expandable-checkbox';
 @import 'blocks/bullet-list/bullet-list';
+@import 'blocks/cons/cons';
+@import 'blocks/review/review';
+@import 'blocks/date-dropdown/date-dropdown';
+@import 'blocks/find-room/find-room';
+@import 'blocks/registration/registration';
+@import 'blocks/room/room';
+@import 'blocks/come-in/come-in';
+@import 'blocks/walkthrough/walkthrough';
+@import 'blocks/header_block/header_block';
+
+
+
+
 
 
 * {
@@ -26,18 +41,37 @@
 body {
     position: relative;
     color: $dark-100;
+    font-family: Montserrat;
 }
 
-h1 {font-size: 24px; line-height: 30px;}
-h2 {font-size: 19px; line-height: 23px;}
+h1 {
+    font-size: 24px; 
+    line-height: 30px;
+    font-style: normal;
+    font-weight: bold;
+}
+h2 {
+    font-size: 19px; 
+    line-height: 23px;
+    font-style: normal;
+    font-weight: bold;
+}
 h3 {
     font-size: 12px; 
     line-height: 15px; 
     text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
     &.title {
         margin-bottom: 16px;
     }
 }
-body {font-size: 14px; line-height: 24px; color: $dark-75;}
+.body-text {
+    font-size: 14px; 
+    line-height: 24px; 
+    color: $dark-75;
+    font-style: normal;
+    font-weight: normal;
+}
 
 

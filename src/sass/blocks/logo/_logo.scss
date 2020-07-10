@@ -8,7 +8,7 @@
     border: 3px solid $dark-25;
 
     &::before {
-        content: url('../img/left.svg');
+        content: url('../img/left.png');
         position: absolute;
         width: 15px;
         height: 15px;
@@ -16,7 +16,7 @@
         top: 16px;
     }
     &::after {
-        content: url('../img/right.svg');
+        content: url('../img/right.png');
         position: absolute;
         width: 11px;
         height: 7px;

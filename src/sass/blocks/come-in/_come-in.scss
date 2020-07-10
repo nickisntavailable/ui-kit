@@ -1,0 +1,35 @@
+.come-in {
+    width: 380px;
+    height: 358px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 40px 30px 30px;
+    margin-bottom: 30px;
+
+    &__title,
+    &__credentials {
+        margin-bottom: 20px;
+    }
+
+
+    &__submit {
+        margin-bottom: 30px;
+    }
+
+    &__create {
+        width: 320px;
+        height: 44px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #000;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}

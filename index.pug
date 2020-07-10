@@ -16,8 +16,8 @@ mixin checkbox-item-wide(header, paragraph)
 
 mixin radio()
     .radio
-        .radio__title
-            h3="Radio buttons"
+        //- .radio__title
+        //-     h3="Radio buttons"
         .radio__options
             input(name="option" type="radio" id="left" class="hide" checked)
             label(for="left")="Мужчины"
@@ -26,8 +26,8 @@ mixin radio()
 
 mixin toggle(isChecked)
     .toggle
-        .toggle__title
-            h3="Toggle"
+        //- .toggle__title
+        //-     h3="Toggle"
         .toggle__items
             if(isChecked)
                 input(type="checkbox" class="toggle__item" id='tg' checked)
@@ -36,14 +36,14 @@ mixin toggle(isChecked)
             label(for="tg")="Получать спецпредложения"
 
 mixin like()
-    .like__label
-            h3= "Like button"
+    //- .like__label
+    //-         h3= "Like button"
     button.like
         i(class="like__icon material-icons" style="font-size: 10px")="favorite_border"
         p(class="like__text")="2"
 
 mixin rating()
-    h3(class="rating__title")="rate button"
+    //- h3(class="rating__title")="rate button"
     .rating
         
         input(type="radio" name="rating" id="r1")
@@ -61,10 +61,10 @@ mixin rating()
         input(type="radio" name="rating" id="r5")
         label(for="r5" class="material-icons")
 
-mixin button-submit()
+mixin button-submit(title)
     .button-submit
         button.button.filled
-            p="Перейти к оплате"
+            p=title
             label(type="submit" class="filled__submit material-icons")="arrow_forward"
 
 mixin expandable-checkbox()
@@ -87,7 +87,29 @@ mixin bullet-list(items)
             each item in items
                 li= item
 
+
+mixin cons(name)
+    .cons
+        span.material-icons=name
+        h3="Комфорт"
+        p="Шумопоглощающие стены"
+
+mixin review(name, time, comment)
+    .review
+        .review__title
+            .review__title-icon
+            .review__title-name
+                h3=name
+                p=time
+        .review__body
+            +like()
+            p=comment
+
+
+
 -var colors = [{name: "dark", opacity: "100"},{name: "dark", opacity: "75"},{name: "dark", opacity: "50"},{name: "dark", opacity: "25"},{name: "purple", opacity: ""},{name: "green", opacity: ""},]
+
+
 
 
 doctype html
@@ -97,83 +119,14 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
+        .logo
         section.container
-            .logo
-            .container.half
-                each color in colors
-                    if(color.name == "dark" && opacity != "")
-                        -var cname = color.name + "-" + color.opacity
-                        -var ctext = `Dark Shade ${color.opacity}%`
-                        +colors_block(cname, ctext, "#1F2041")
-                    else if (color.name == "purple")
-                        +colors_block("purple", "Purple", "#BC9CFF")
-                    else if (color.name == "green")
-                        +colors_block("green", "Green", "#6FCF97")
-            .container.half
-                +type_block("h1", "This one is the sub-section or widget title")
-                +type_block("h2", "Next one is the item title inside widgets")
-                +type_block("h3", "This is a label or CTA text")
-                +type_block("body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
+            include src/pug/colors-types.pug
         section.container
-            .container.half
-                +text-field("text-field", "Email", "text")
-                +masked-text-field("masked text-field", "DD.MM.YYYY", "text")
-                +subscription-text-field("subscription text field", "Email")
-                +dropdown(false)
-                +dropdown(true)
-                <input type='text' class="datepicker-here"/>
-                .checkbox
-                    .checkbox__label
-                        h3= "Checkbox Buttons"
-                    +checkbox-item("Можно курить")
-                    +checkbox-item("Можно с питомцами")
-                    +checkbox-item("Можно пригласить гостей (до 10 человек)")
-                +radio()
-                +toggle(true)
-                +toggle(false)
-                +like()
-                +rating()
-
-                h3.button__title="Buttons"
-                button.button="Click Me"
-                button.button.dark50="Click Me"
-                button.button.border="Click Me"
-                button.button.border.disabled="Click Me"
-
-                +button-submit()
-                .paginator
-                +expandable-checkbox()
-
-                h3.title="rich checkbox buttons"
-                +checkbox-item-wide("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-                +checkbox-item-wide("Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
-                +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00,а выезд до 12:00"])
-            .container.half
-                
-                
-                
-        
-                
-
-
-                
-                
-
-                
-                
-                
-
-                    
-                    
-                
-                
-                
-                
-                
-                
-                
-
-                        
-
-
-            
+            include src/pug/form-elements.pug
+        section.container
+            +review(...["Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."])
+        section.container
+            include src/pug/cards.pug
+        section
+            include src/pug/header-footer.pug

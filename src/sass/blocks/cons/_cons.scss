@@ -1,0 +1,42 @@
+.cons {
+    max-width: 291px;
+    padding-left: 58px;
+    position: relative;
+    margin-bottom: 41px;
+    span {
+        font-family: Material Icons;
+        font-size: 48px;
+        line-height: 41px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: absolute;
+        left: 0;
+    }
+    h3 {
+        text-transform: initial;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 24px;
+        position: relative;
+    }
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        // display: block;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 280px;
+            height: 1px;
+            background-color: $dark-25;
+            bottom: -17px;
+            left: -58px;
+        }
+    }
+    
+}

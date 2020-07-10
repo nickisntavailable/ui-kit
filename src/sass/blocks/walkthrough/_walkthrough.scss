@@ -1,0 +1,217 @@
+
+@mixin material-shadow() {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+  }
+$module-font-size: 14px;
+$bezier: cubic-bezier(.25,.8,.25,1);
+  
+  
+  
+  // =================================================================================================
+  // Walkthrough
+  // =================================================================================================
+.walkthrough {
+    // @include material-shadow();
+    background: url('../img/bed.png');//grey; // сюда картинку
+    border-radius: 0;
+    display: none;
+    flex-direction: column;
+    flex: 0 0 auto;
+    font-size: $module-font-size;
+    height: 151px;
+    overflow: hidden;
+    transition: opacity 0.4s $bezier, transform 0.4s $bezier, box-shadow 0.4s $bezier;
+    width: 270px;
+    z-index: 1000;
+  
+    &.show {
+      display: flex;
+      opacity: 0;
+      transform: translateY(72px);
+    }
+  
+    &.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .walkthrough-body {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      text-align: center;
+  
+      
+      .prev-screen,
+      .next-screen {
+        // width: 44px;
+        // height: 44px;
+        align-self: stretch;
+        background: none;
+        border: 0;
+        margin-top: 20px;
+        color: rgba(white, 0.25);
+        cursor: pointer;
+        flex: 0 0 auto;
+        font-size: 24px;
+        opacity: 1;
+        outline: none;
+        padding: 12px;
+        transform: scale(1);
+        transition: transform 0.4s $bezier, color 0.4s $bezier, opacity 0.4s $bezier;
+        z-index: 1000;
+        
+        &:hover,
+        &:active {
+          color: white;
+          transform-origin: center;
+          transform: scale(1.25);
+        }
+  
+        &:disabled {
+          opacity: 0;
+        }
+      }
+  
+      .prev-screen {
+        order: 1;
+        transform: rotate(90deg);
+        &:hover,
+        &:active {
+            transform: rotate(90deg);
+        }
+      }
+  
+      .next-screen {
+        order: 3;
+        transform: rotate(-90deg);
+        &:hover,
+        &:active {
+            transform: rotate(-90deg);
+        }
+      }
+  
+      .screens {
+        flex: 1;
+        align-self: stretch;
+        position: relative;
+        margin: 0 -16px;
+        padding: 0;
+        order: 2;
+  
+        .screen {
+          position: absolute;
+          list-style-type: none;
+        }
+      }
+    }
+  
+    .walkthrough-pagination {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+      margin-right: 15px;
+  
+      .dot {
+        background: rgba(black, 0.25);
+        border-radius: 8px;
+        border: 1px solid #FFFFFF;
+        
+        margin: 0 3.75px;
+        transform: scale(0.75);
+        transition: transform 0.4s $bezier, background 0.4s $bezier;
+        width: 7.5px;
+        height: 7.5px;
+  
+        &.active {
+          background: white;
+          transform: scale(1);
+          transition-delay: 0.4s;
+        }
+      }
+    }
+}
+  
+.bed {
+    min-height: 408px;
+    margin-left: 100px; //надо будет пото убирать
+    &__bottom {
+        width: 270px;
+        height: 107px;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        border-radius: 4px;
+        z-index: 1000;
+        padding: 20px 17px 19px 20px;
+        &__title {
+            width: 233px;
+            height: 17px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            margin-bottom: 17px;
+            p {
+                font-family: Quicksand;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                b {
+                    font-size: 11px;
+                    line-height: 17px;
+                }
+                span {
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 12px;
+                    line-height: 15px;
+                    /* identical to box height */
+    
+                    text-transform: uppercase;
+                    color: $purple;
+                    padding-left: 5px;
+                }
+            }
+            &__sum {
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 18px;
+                color: $dark-50;
+                span { 
+                    font-weight: bold;
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                width: 230px;
+                height: 1px;
+                background-color: $dark-10;
+                bottom: -10px;
+                left: 0;
+            }
+        }
+        &__body {
+            display: flex;
+            justify-content: space-between;
+
+            &__sum {
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 18px;
+                color: $dark-50;
+                span { 
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+    

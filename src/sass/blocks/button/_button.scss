@@ -14,17 +14,34 @@
         margin-bottom: 16px;
     }
 
+    &.info {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $dark-25;
+        border-radius: 50%;
+        color: $dark-25;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: lowercase;
+    }
+
     &.filled {
         width: 320px;
         height: 44px;
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);;
         color: #fff;
         border-radius: 22px;
-
+        font-family: Montserrat;
+        font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        padding: 1px 5px 2px 0px;
 
         .filled__submit {
             position: absolute;
@@ -40,6 +57,7 @@
             width: 44px;
             height: 44px;
             right: 0;
+            top: 0;
             outline: none;
             cursor: pointer;
         }

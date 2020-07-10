@@ -1,0 +1,109 @@
+.container.half
+    //- форма подбора комнаты
+    .find-room
+        .find-room__title="Найдём номера под ваши пожелания"
+        .find-room__date
+            .date-dropdown
+                +date-dropdown("прибытие")
+                +date-dropdown("выезд")
+        .find-room__guest
+            +dropdown(true, "гости")
+        .find-room__submit
+            +button-submit("подобрать номер")
+    //- форма регистрации
+    .registration
+        h1.registration__title="Регистрация аккаунта"
+        .registration__name
+            +text-field(null, "Имя", "text")
+            +text-field(null, "Фамилия", "text")
+            +radio()
+        .registration__birth
+            h3="дата рождения"
+            +masked-text-field("ДД.ММ.ГГГГ", "masked2")
+        .registration__credentials
+            h3="данные для входа в сервис"
+            +text-field(null, "Email", "email")
+            +text-field(null, "Пароль", "password")
+            +toggle(false)
+        .registration__submit
+            +button-submit("подобрать номер")
+        .registration__enter
+            p="Уже есть аккаунт на Toxin"
+            button.button.border="Войти"
+    
+.container.half
+    //- подбор комнаты
+    .room
+        .room__title
+            p
+                b="№"
+                =" 888"
+                span="люкс"
+            .room__title__sum
+                span="9 990₽"
+                =" в сутки"
+        .room__date
+            .date-dropdown
+                +date-dropdown("прибытие")
+                +date-dropdown("выезд")
+        .room__guest    
+            +dropdown(true, "гости")
+        .room__sum
+            .room__sum__item
+                p="9 990₽ х 4 суток"
+                p="39 960₽"
+            .room__sum__item
+                p="Сбор за услуги: скидка 2 179₽"
+                button.button.info="i"
+                p="0₽"
+            .room__sum__item
+                p="Сбор за дополнительные услуги"
+                button.button.info="i"
+                p="39 960₽"
+            .room__sum__item.total
+                p="Итого"
+                p="38 081₽"
+        .room__submit
+            +button-submit("забронировать")
+    //- форма регистрации
+    .come-in
+        h1.come-in__title="Войти"
+        .come-in__credentials
+                +text-field(null, "Email", "email")
+                +text-field(null, "Пароль", "password")
+        .come-in__submit
+                +button-submit("войти")
+        .come-in__create
+                p="Нет аккаунта на Toxin?"
+                button.button.border="создать" 
+    .bed
+        .walkthrough.show.reveal
+            .walkthrough-body
+                ul.screens.animate
+                    li.screen.active
+                    li.screen
+                    li.screen
+                    li.screen
+                button.prev-screen
+                    i.hyu.material-icons="expand_more"
+                button.next-screen
+                    i.material-icons="expand_more"
+            .walkthrough-pagination
+                a.dot.active
+                a.dot
+                a.dot
+                a.dot
+        .bed__bottom
+            .bed__bottom__title
+                p
+                    b="№"
+                    =" 888"
+                    span="люкс"
+                .bed__bottom__title__sum
+                    span="9 990₽"
+                    =" в сутки"
+            .bed__bottom__body
+                +rating()
+                .bed__bottom__body__sum
+                    span="145"
+                    =" Отзывов"

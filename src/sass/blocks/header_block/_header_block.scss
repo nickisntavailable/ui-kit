@@ -1,0 +1,105 @@
+.header_block {
+    width: 1440px;
+    height: 70px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 140px;
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                margin-right: 20px;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 17px;
+                color: $dark-50;
+                position: relative;
+                &.active {
+                    font-weight: bold;
+                    color: $dark-75;
+                }
+                &.drop {
+                    margin-right: 44px;
+                    &::after {
+                        content: 'expand_more';
+                        position: absolute;
+                        font-family: Material Icons;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 24px;
+                        line-height: 17px;
+                        color: $dark-50;
+                    }
+                }
+            }
+        }
+        button {
+            margin-right: 20px;
+        }
+    }
+
+    &.buttonless {
+        button {
+            display: none;
+        }
+    }
+    
+    
+
+}
+
+.logo-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 100%;
+    margin-right: 40px;
+
+    &__icon {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        // left: 30px;
+        // top: 30px;
+        border-radius: 50%;
+        border: 3px solid $dark-25;
+    
+        &::before {
+            content: url('../img/left.png');
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: 8px;
+            top: 16px;
+        }
+        &::after {
+            content: url('../img/right.png');
+            position: absolute;
+            width: 11px;
+            height: 7px;
+            left: 22px;
+            top: 9px;
+        }
+    }
+    &__title {
+        width: 54px;
+        height: 13px;
+        margin-left: 15px;
+        background: url('../img/TOXIN.png');
+        border: none;
+    }
+}

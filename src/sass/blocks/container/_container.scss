@@ -7,6 +7,10 @@
     display: flex;
     justify-content: flex-start;
     // align-items: flex-start;
+
+    &.column {
+        flex-direction: column;
+    }
     &.half {
         display: flex;
         flex-direction: column;

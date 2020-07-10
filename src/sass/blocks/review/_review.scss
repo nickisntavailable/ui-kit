@@ -1,0 +1,54 @@
+.review {
+    &__title {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 10px;
+        &-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            // background: url(../img/head.png) center center/cover no-repeat;
+            background: url(../img/head.png) center 30%;
+            border: 2px solid #FFFFFF;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+            margin-right: 10px;
+        }
+        &-name {
+            font-family: Montserrat;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 24px;
+            h3 {
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+            p {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        justify-content: start;
+        align-items: flex-start;
+        & button.like {
+            margin-top: 2px;
+            margin-right: 10px;
+        }
+        p {
+            display: block;
+            max-width: 653px;
+
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: $dark-75;
+        }
+    }
+}
